@@ -1,0 +1,61 @@
+.greet-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../Assets/space-background.jpg);
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+.greet-text {
+    color: whitesmoke;
+    font-size: 50px;
+    font-family: 'Sono', sans-serif;
+}
+
+.greet-planet {
+    position: absolute;
+    width: 70px;
+}
+
+.greet-planet-1 {
+    top: 20%;
+    left: 20%;
+}
+.greet-planet-2 {
+    top: 15%;
+    left: 50%;
+}
+.greet-planet-3 {
+    top: 25%;
+    left: 70%;
+}
+.greet-planet-4 {
+    top: 50;
+    left: 80%;
+}
+.greet-planet-5 {
+    top: 70%;
+    left: 65%;
+}
+.greet-planet-6 {
+    top: 45%;
+    left: 10%;
+}
+.greet-planet-7 {
+    top: 70%;
+    left: 40%;
+}
+.greet-planet-8 {
+    top: 65%;
+    left: 20%;
+}
+
+
+
+
+
