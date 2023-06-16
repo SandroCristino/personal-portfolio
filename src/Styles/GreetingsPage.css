@@ -7,14 +7,12 @@
     background-image: url(../Assets/space-background.jpg);
     background-position: center;
     background-size: cover;
-
-
 }
 
 .greet-text {
     color: whitesmoke;
     font-size: 50px;
-    font-family: 'Sono', sans-serif;
+    font-family: 'Play', sans-serif;
 }
 
 .greet-planet {
