@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import '../Styles/Projects.css'
 import redditVideo from '../Assets/redditPresentation.mov'
 import reactIcon from '../Assets/Icons/react.png'
 import bootstrapIcon from '../Assets/Icons/bootstrap.png'
+import '../Styles/Projects.css'
 
 export default function Projects() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -23,7 +23,7 @@ export default function Projects() {
     }, [])
 
     return (
-        <div className='projects-outer-container'>
+        <div className='projects-outer-container' id='projects'>
             <h2 className={`projects-headline ${isScrolled ? 'animate-scroll' : ''}`}>Projects</h2>
             <hr />
             <div className="project">

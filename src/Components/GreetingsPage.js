@@ -31,7 +31,7 @@ export default function GreetingsPage() {
     }
 
     return (
-        <div className='greet-outer-container' onMouseMove={handleMouseMove}>
+        <div className='greet-outer-container' id='greetings' onMouseMove={handleMouseMove}>
             <div 
             className='greet-inner-container'   
             style={{ transform: `translate3d(${swayOffset.x}px, ${swayOffset.y}px, 0) rotateY(${swayOffset.x}deg) rotateX(${swayOffset.y}deg)`}}>
