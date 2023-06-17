@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import GreetingsPage from './GreetingsPage.js'
 import Navbar from './Navbar.js'
 import Projects from './Projects.js'
+import About from './About.js'
 
 export default class Homepage extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class Homepage extends Component {
         <Navbar />
         <GreetingsPage />
         <Projects />
+        <About />
       </div>
     )
   }
