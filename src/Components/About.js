@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import myself from '../Assets/myself.jpg'
 import '../Styles/About.css'
+import FrameworkSlider from './FrameworkSlider'
 
 export default function About() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -32,7 +33,9 @@ export default function About() {
                 <img className='about-image' src={myself} alt="Picture of myself" />
            </div>
            <div className='about-framework-slider'>
-                // Here should be the frameworks
+                <div>
+                    <FrameworkSlider/>
+                </div>
            </div>
         </div>
   )

@@ -40,7 +40,14 @@ export default function Navbar() {
                 >
                     <button className='nav-link'>Portfolio</button>
                 </ScrollLink>
-                <button className='nav-link'>About</button>
+                <ScrollLink
+                   to='about'
+                   smooth={true}
+                   duration={500}
+                >
+                    <button className='nav-link'>About</button>
+
+                </ScrollLink>
                 <button className='nav-link'>Contact</button>
                 <button className='nav-link' onClick={() => navigate('/resume')}>Resume</button>
             </div>
