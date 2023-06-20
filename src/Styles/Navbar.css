@@ -8,12 +8,23 @@
     top: 0;
     z-index: 2;
     transition: height 1s, background-color 0.5s ease;
+    padding-top: 5px;
+}
+
+.nav-logo {
+    width: 125px;
+    margin-right: -20px;
 }
 
 .nav-outer-shrink {
     height: 50px;
     background-color: rgba(0, 0, 0, 0.9);
 } 
+
+.nav-left-link {
+    display: flex;
+    align-self: center;
+}
 
 .nav-right-container {
     display: flex;
@@ -24,6 +35,8 @@
 }
 
 .nav-left-container {
+    display: flex;
+    justify-items: center;
     width: clamp(25%, 250px, 400px);
     padding-left: 20px;
 }

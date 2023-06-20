@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll';
+import logo from '../Assets/logo.png'
 
 
 import '../Styles/Navbar.css'
@@ -27,7 +28,9 @@ export default function Navbar() {
                     to='greetings'
                     smooth={true}
                     duration={500}
+                    className='nav-left-link'
                 >
+                    <img className='nav-logo' src={logo} alt="Log" />
                     <button className='nav-link' onClick={() => {navigate('/personal-portfolio')}}>Sandro Cristino</button>
                 </ScrollLink>
             </div>
@@ -48,7 +51,13 @@ export default function Navbar() {
                     <button className='nav-link'>About</button>
 
                 </ScrollLink>
-                <button className='nav-link'>Contact</button>
+                <ScrollLink
+                   to='contact'
+                   smooth={true}
+                   duration={500}
+                >
+                    <button className='nav-link'>Contact</button>
+                </ScrollLink>
                 <button className='nav-link' onClick={() => navigate('/resume')}>Resume</button>
             </div>
         </nav>

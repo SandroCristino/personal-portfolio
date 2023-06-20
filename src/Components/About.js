@@ -1,12 +1,12 @@
 import React, { useEffect, useState} from 'react'
 import myself from '../Assets/myself.jpg'
-import '../Styles/About.css'
 import FrameworkSlider from './FrameworkSlider'
+import '../Styles/About.css'
+
 
 export default function About() {
     const [isScrolled, setIsScrolled] = useState(false)
-    const [scaleX, setScaleX] = useState('')
-    const [prevScrollY, setPrevScrollY] = useState(0);
+    const [scale, setScale] = useState('')
 
         
     useEffect(() => {
@@ -19,38 +19,20 @@ export default function About() {
 
         let initialScrollPosition
         window.addEventListener('scroll', function() {
-            // var pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-            initialScrollPosition = Math.floor((window.pageYOffset / 80) );
-            console.log('Scroll position:', initialScrollPosition);
-        });
-
-        // const handleNextPage = () => {
-        //     const element = document.querySelector('.about-outer-container')
-        //     const rect = element.getBoundingClientRect()
-
-        //     const center = rect.bottom
-        //     const minus10 = (center * 10) / 100
-        //     const plus10 = (center * 110) / 100
-        //     console.log(window.pageYOffset)
-        //     console.log(center)
-
-        //     const scrollPercentage = (window.innerHeight - center) / (minus10 - plus10);
-        //     console.log(scrollPercentage)
-
-        //     const scaleXValue = 0.9 + scrollPercentage * 0.1;
-
-        //     setScaleX(scaleXValue);
+            initialScrollPosition = Math.floor((window.pageYOffset / 80) )
+            console.log('Scroll position:', initialScrollPosition)
+        })
      
     const handleNextPage = () => {
-        const element = document.querySelector('.about-outer-container');
-        const rect = element.getBoundingClientRect();
+        const element = document.querySelector('.about-outer-container')
+        const rect = element.getBoundingClientRect()
   
         if (rect.bottom < window.innerHeight) {
-        const scrollPercentage = (window.innerHeight - rect.bottom) / window.innerHeight;
-        const scaleXValue = 1 - scrollPercentage * 0.1;
-        setScaleX(scaleXValue);
+        const scrollPercentage = (window.innerHeight - rect.bottom) / window.innerHeight
+        const scaleValue = 1 - scrollPercentage * 0.1
+        setScale(scaleValue)
         } else {
-            setScaleX(1)
+            setScale(1)
         }
 
     }
@@ -64,7 +46,7 @@ export default function About() {
     },[])
 
     return (
-        <div className={`about-outer-container`} style={{ transform: `scale(${scaleX})` }} id='about'>
+        <div className={`about-outer-container`} style={{ transform: `scale(${scale})` }} id='about'>
             <h2 className={`about-headline ${isScrolled ? 'animate-scroll' : ''}`}>About</h2>
             <hr />
             <div className='about-info-container'>
