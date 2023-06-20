@@ -5,6 +5,9 @@ import FrameworkSlider from './FrameworkSlider'
 
 export default function About() {
     const [isScrolled, setIsScrolled] = useState(false)
+    const [scaleX, setScaleX] = useState('')
+    const [prevScrollY, setPrevScrollY] = useState(0);
+
         
     useEffect(() => {
         const handleScroll = () => {
@@ -14,15 +17,54 @@ export default function About() {
             setIsScrolled(isVisible)
         }
 
+        let initialScrollPosition
+        window.addEventListener('scroll', function() {
+            // var pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            initialScrollPosition = Math.floor((window.pageYOffset / 80) );
+            console.log('Scroll position:', initialScrollPosition);
+        });
+
+        // const handleNextPage = () => {
+        //     const element = document.querySelector('.about-outer-container')
+        //     const rect = element.getBoundingClientRect()
+
+        //     const center = rect.bottom
+        //     const minus10 = (center * 10) / 100
+        //     const plus10 = (center * 110) / 100
+        //     console.log(window.pageYOffset)
+        //     console.log(center)
+
+        //     const scrollPercentage = (window.innerHeight - center) / (minus10 - plus10);
+        //     console.log(scrollPercentage)
+
+        //     const scaleXValue = 0.9 + scrollPercentage * 0.1;
+
+        //     setScaleX(scaleXValue);
+     
+    const handleNextPage = () => {
+        const element = document.querySelector('.about-outer-container');
+        const rect = element.getBoundingClientRect();
+  
+        if (rect.bottom < window.innerHeight) {
+        const scrollPercentage = (window.innerHeight - rect.bottom) / window.innerHeight;
+        const scaleXValue = 1 - scrollPercentage * 0.1;
+        setScaleX(scaleXValue);
+        } else {
+            setScaleX(1)
+        }
+
+    }
         window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleNextPage)
 
         return () => {
             window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('scroll', handleNextPage)
         }
-    }, [])
+    },[])
 
     return (
-        <div className='about-outer-container' id='about'>
+        <div className={`about-outer-container`} style={{ transform: `scale(${scaleX})` }} id='about'>
             <h2 className={`about-headline ${isScrolled ? 'animate-scroll' : ''}`}>About</h2>
             <hr />
             <div className='about-info-container'>
@@ -32,11 +74,8 @@ export default function About() {
                 </div>
                 <img className='about-image' src={myself} alt="Picture of myself" />
            </div>
-           <div className='about-framework-slider'>
-                <div>
-                    <FrameworkSlider/>
-                </div>
-           </div>
+            <FrameworkSlider/>
+            <hr />
         </div>
   )
 }

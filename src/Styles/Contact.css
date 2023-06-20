@@ -1,0 +1,16 @@
+.contact-outer-container {
+    min-height: 100vh;
+    padding: 20px 50px 20px 50px;
+    background-color: rgb(254, 254, 254);
+}
+
+.contact-headline {
+    font-size: 5rem;
+    color: rgba(162, 232, 13, 0.938);
+    font-family: 'Play', sans-serif;
+    margin-bottom: 50px;
+}
+
+.contact-headline.animate-scroll {
+    animation: slideIn 1.5s ease forwards;
+}
