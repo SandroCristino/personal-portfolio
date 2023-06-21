@@ -107,7 +107,7 @@ export default function Contact() {
                         value={name}
                         onChange={handleChange}
                         onInvalid={handleInvalid} />
-                        {nameValid && <span class='contact-valid-span material-symbols-outlined'>check_circle</span>}
+                        <span class={`contact-valid-span material-symbols-outlined ${nameValid && 'contact-span-visible'}`}>check_circle</span>
                 </div>
                 {nameError && <p className='contact-error-message'>{nameError}</p>}
                 <div className='contact-form-group'>
@@ -121,8 +121,7 @@ export default function Contact() {
                         value={subject}
                         onChange={handleChange} 
                         onInvalid={handleInvalid} />
-                        {subjectValid && <span class='contact-valid-span material-symbols-outlined'>check_circle</span>}
-
+                        <span class={`contact-valid-span material-symbols-outlined ${subjectValid && 'contact-span-visible'}`}>check_circle</span>
                 </div>
                 {subjectError && <p className='contact-error-message'>{subjectError}</p>}
                 <div className='contact-form-group'>
@@ -137,8 +136,7 @@ export default function Contact() {
                         value={message}
                         onChange={handleChange}
                         onInvalid={handleInvalid}></textarea>
-                        {messageValid && <span class='contact-valid-span material-symbols-outlined'>check_circle</span>}
-
+                        <span class={`contact-valid-span material-symbols-outlined ${messageValid && 'contact-span-visible'}`}>check_circle</span>
                 </div>
                 {messageError && <p className='contact-error-message'>{messageError}</p>}
                 <div className='contact-form-group project-button-group'>

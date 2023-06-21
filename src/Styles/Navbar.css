@@ -56,5 +56,14 @@
     text-shadow: 200px;
 }
 
+.nav-toggle {
+    display: none;
+}
 
 
+@media screen and (max-width: 768px) {
+    .nav-right-container {
+      display: none; 
+    }
+  
+}

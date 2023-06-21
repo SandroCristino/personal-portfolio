@@ -26,7 +26,7 @@ export default function Navbar() {
     const togglerNav = () => {
         setIsNavOpen(!isNavOpen)
     }
-    
+
     return (
         <nav className={`nav-outer-container ${isScrolled ? 'nav-outer-shrink' : ''}`}>
             <div className='nav-left-container'>
@@ -40,7 +40,7 @@ export default function Navbar() {
                     <button className='nav-link' onClick={() => {navigate('/personal-portfolio')}}>Sandro Cristino</button>
                 </ScrollLink>
             </div>
-            <div className='nav-right-container'>
+            <div className={`nav-right-container ${isNavOpen ? 'open' : ''}`}>
                 <ScrollLink
                     to='projects'
                     smooth={true}
@@ -55,7 +55,6 @@ export default function Navbar() {
                    duration={500}
                 >
                     <button className='nav-link'>About</button>
-
                 </ScrollLink>
                 <ScrollLink
                    to='contact'
@@ -65,6 +64,13 @@ export default function Navbar() {
                     <button className='nav-link'>Contact</button>
                 </ScrollLink>
                 <button className='nav-link' onClick={() => navigate('/resume')}>Resume</button>
+            </div>
+            <div className={`nav-toggle ${isNavOpen ? 'open' : ''}`} onClick={togglerNav}>
+                <ul className='nav-links-container'>
+                    <li>
+                        {/* Work here */}
+                    </li>
+                </ul>
             </div>
         </nav>
     )
