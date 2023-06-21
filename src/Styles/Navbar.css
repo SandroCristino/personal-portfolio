@@ -12,8 +12,8 @@
 }
 
 .nav-logo {
-    width: 125px;
-    margin-right: -20px;
+    width: 40px;
+
 }
 
 .nav-outer-shrink {
@@ -51,8 +51,10 @@
     transition: opacity 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-left-link:hover {
     opacity: 0.4;
     text-shadow: 200px;
 }
+
+
 

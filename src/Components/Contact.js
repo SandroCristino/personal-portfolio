@@ -8,15 +8,12 @@ import '../Styles/Contact.css'
 export default function Contact() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [name, setName] = useState('')
-    const [mail, setMail] = useState('')
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
     const [nameError, setNameError] = useState('')
-    const [mailError, setMailError] = useState('')
     const [subjectError, setSubjectError] = useState('')
     const [messageError, setMessageError] = useState('')
     const [nameValid, setNameValid] = useState(false)
-    const [mailValid, setMailValid] = useState(false)
     const [subjectValid, setSubjectValid] = useState(false)
     const [messageValid, setMessageValid] = useState(false)
     const [githubImg, setGithubImg] = useState(githubOff)
@@ -47,12 +44,6 @@ export default function Contact() {
                 if (name) setNameError('')
                 if (!nameError) setNameValid(true)
                 break
-            case 'email':
-                const mailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{1,4}$/
-                setMail(event.target.value)
-                if (mail) setMailError('')
-                if (mailPattern.test(mail)) setMailValid(true)
-                break
             case 'subject':
                 setSubject(event.target.value)
                 if (subject) setSubjectError('')
@@ -70,6 +61,9 @@ export default function Contact() {
 
     const handleOnSubmit = (event) => {
         event.preventDefault()
+
+        const mailtoLink = `mailto:sandrocristino10@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+        window.location.href = mailtoLink;
     }
 
     const handleInvalid = (event) => {
@@ -81,10 +75,6 @@ export default function Contact() {
             case 'name':
                 setNameError('Name is missing')
                 setNameValid(false)
-                break
-            case 'email':
-                setMailError('Please enter a valid email')
-                setMailValid(false)
                 break
             case 'subject':
                 setSubjectError('Subject is missing')
@@ -120,21 +110,6 @@ export default function Contact() {
                         {nameValid && <span class='contact-valid-span material-symbols-outlined'>check_circle</span>}
                 </div>
                 {nameError && <p className='contact-error-message'>{nameError}</p>}
-                <div className='contact-form-group'>
-                    <input 
-                        required
-                        placeholder='Email'
-                        className={`contact-form-input ${mailError && 'contact-error-box'}`}
-                        type="email" 
-                        name="email" 
-                        id="email"
-                        value={mail}
-                        onChange={handleChange} 
-                        onInvalid={handleInvalid} />
-                        {mailValid && <span class='contact-valid-span material-symbols-outlined'>check_circle</span>}
-
-                </div>
-                {mailError && <p className='contact-error-message'>{mailError}</p>}
                 <div className='contact-form-group'>
                     <input 
                         required

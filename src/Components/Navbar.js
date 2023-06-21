@@ -8,6 +8,7 @@ import '../Styles/Navbar.css'
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
+    const [isNavOpen, setIsNavOpen] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -21,6 +22,11 @@ export default function Navbar() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop
         setIsScrolled(scrollTop > 0)
     }
+
+    const togglerNav = () => {
+        setIsNavOpen(!isNavOpen)
+    }
+    
     return (
         <nav className={`nav-outer-container ${isScrolled ? 'nav-outer-shrink' : ''}`}>
             <div className='nav-left-container'>

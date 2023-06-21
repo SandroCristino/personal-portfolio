@@ -1,0 +1,16 @@
+.footer-contaier {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    color: white;
+}
+
+.footer-outer-containter {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.footer-text {
+    font-family: 'Play', sans-serif;
+}

@@ -4,6 +4,7 @@ import Navbar from './Navbar.js'
 import Projects from './Projects.js'
 import About from './About.js'
 import Contact from './Contact.js'
+import Footer from './Footer.js'
 
 
 export default class Homepage extends Component {
@@ -15,6 +16,7 @@ export default class Homepage extends Component {
         <Projects />
         <About />
         <Contact />
+        <Footer />
       </div>
     )
   }
