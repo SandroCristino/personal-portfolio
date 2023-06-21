@@ -9,6 +9,7 @@ import '../Styles/Navbar.css'
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isNavOpen, setIsNavOpen] = useState(false)
+    const [startAnimation, setStartAnimation] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -24,7 +25,15 @@ export default function Navbar() {
     }
 
     const togglerNav = () => {
-        setIsNavOpen(!isNavOpen)
+        if (isNavOpen) {
+            setStartAnimation(true)
+            setTimeout(() => {
+                setIsNavOpen(false)
+              }, 100); 
+        } else {
+            setIsNavOpen(true)
+            setStartAnimation(false)
+        } 
     }
 
     return (
@@ -66,11 +75,46 @@ export default function Navbar() {
                 <button className='nav-link' onClick={() => navigate('/resume')}>Resume</button>
             </div>
             <div className={`nav-toggle ${isNavOpen ? 'open' : ''}`} onClick={togglerNav}>
-                <ul className='nav-links-container'>
-                    <li>
-                        {/* Work here */}
-                    </li>
-                </ul>
+                <div className={`nav-icon ${isNavOpen ? 'open' : ''}`}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                {isNavOpen && (
+                    <ul className={`nav-links-container ${startAnimation && 'nav-links-closing'}`}>
+                        <li className='nav-list-link'>
+                            <ScrollLink
+                                to='projects'
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                            >
+                                <button>Portfolio</button>
+                            </ScrollLink>
+                        </li>
+                        <li className='nav-list-link'>
+                            <ScrollLink
+                            to='about'
+                            smooth={true}
+                            duration={500}
+                            >
+                                <button>About</button>
+                            </ScrollLink>
+                        </li>
+                        <li className='nav-list-link'>
+                            <ScrollLink
+                            to='contact'
+                            smooth={true}
+                            duration={500}
+                            >
+                                <button>Contact</button>
+                            </ScrollLink>
+                        </li>
+                        <li className='nav-list-link'>
+                            <button onClick={() => navigate('/resume')}>Resume</button>
+                        </li>
+                    </ul>
+                )}
             </div>
         </nav>
     )
