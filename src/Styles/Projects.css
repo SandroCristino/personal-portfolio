@@ -63,8 +63,10 @@ hr {
 }
 
 .project-video {
-    width: clamp(25%, 60%, 65%);
+    width: clamp(300px, 60%, 100%);
+    height: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    background-color: black;
 }
 
 .project-description {
@@ -163,6 +165,21 @@ hr {
 
 .projects-more-container::after {
     bottom: 10px !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .project-main {
+        flex-direction: column;
+    }
+
+    .project {
+        padding: 5px 20px 20px 20px;
+    } 
+
+    .projects-outer-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 

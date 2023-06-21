@@ -36,7 +36,7 @@ export default function Projects() {
                 <h3 className='project-headline'>Reddit</h3>
                 <h4 className='project-subline'>Social Media Clone</h4>
                 <div className='project-main'>
-                    <video className='project-video' autoPlay loop muted src={redditVideo}></video>
+                        <video className='project-video' autoPlay loop muted src={redditVideo}></video>
                     <div className='project-description'>
                         <div>
                             <h5 className='project-description-headline'>Summary</h5>
