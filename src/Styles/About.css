@@ -40,7 +40,16 @@
 }
 
 .about-image {
-    width: 40%;
+    width: clamp(300px, 40%, 80%);
     border-radius: 100px;
 }
 
+@media screen and (max-width: 1200px) {
+    .about-info-container {
+        flex-direction: column;
+    }
+
+    .about-outer-container {
+        padding: 30px 20px 100px 30px;
+    }
+}
