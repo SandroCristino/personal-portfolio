@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll';
 import logo from '../Assets/logo.png'
+import pdfFile from '../Assets/CV_SandroCristino.pdf'
 
 
 import '../Styles/Navbar.css'
@@ -34,6 +35,16 @@ export default function Navbar() {
             setIsNavOpen(true)
             setStartAnimation(false)
         } 
+    }
+
+    const handleResumeDownload = () => {
+            // Replace 'resume.pdf' with the actual URL or path to your resume PDF file
+            // const resumeURL = '../Assets/CV_SandroCristino.pdf';
+  
+            const link = document.createElement('a');
+            link.href = pdfFile;
+            link.download = 'CV_Sandro_Cristino';
+            link.click();
     }
 
     return (
@@ -72,7 +83,11 @@ export default function Navbar() {
                 >
                     <button className='nav-link'>Contact</button>
                 </ScrollLink>
-                <button className='nav-link' onClick={() => navigate('/resume')}>Resume</button>
+                <button className='nav-link' onClick={handleResumeDownload}>
+                    Resume
+                  
+                </button>
+             
             </div>
             <div className={`nav-toggle ${isNavOpen ? 'open' : ''}`} onClick={togglerNav}>
                 <div className={`nav-icon ${isNavOpen ? 'open' : ''}`}>
