@@ -5,6 +5,7 @@ import Projects from './Projects.js'
 import About from './About.js'
 import Contact from './Contact.js'
 import Footer from './Footer.js'
+import Cursor from './Cursor.js'
 
 
 export default class Homepage extends Component {
@@ -17,6 +18,7 @@ export default class Homepage extends Component {
         <About />
         <Contact />
         <Footer />
+        <Cursor />
       </div>
     )
   }

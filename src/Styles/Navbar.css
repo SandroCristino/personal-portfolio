@@ -42,7 +42,6 @@
 }
 
 .nav-link {
-    cursor: pointer;
     display: inline-block;
     background: none;
     color: lightgray;
@@ -51,7 +50,8 @@
     transition: opacity 0.3s ease;
 }
 
-.nav-left-link:hover {
+.nav-left-link:hover,
+.nav-link:hover {
     opacity: 0.4;
     text-shadow: 200px;
 }
@@ -144,7 +144,6 @@ button {
     border-radius: 20px;
     font-size: 4rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    cursor: pointer;
     display: inline-block;
     border: none;
     font-weight: bold;
