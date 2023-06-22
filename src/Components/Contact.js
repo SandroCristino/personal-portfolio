@@ -140,7 +140,7 @@ export default function Contact() {
                 </div>
                 {messageError && <p className='contact-error-message'>{messageError}</p>}
                 <div className='contact-form-group project-button-group'>
-                    <button className='project-button'>Send Mail</button>
+                    <button className='contact-button'>Send Mail</button>
                     <span class="material-symbols-outlined">arrow_circle_right</span>
                 </div>                
             </form>
