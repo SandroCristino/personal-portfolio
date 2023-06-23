@@ -1,0 +1,12 @@
+.loading-outer-container {
+    width: 100vh;
+    position: absolute;
+    background-color: white;
+    z-index: 999999;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

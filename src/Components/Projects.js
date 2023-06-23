@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ReactPlayer from 'react-player';
 import redditVideo from '../Assets/redditPresentation.mov'
 import todoVideo from '../Assets/todoPresentation.mov'
 import memoryVideo from '../Assets/memorycardPresentation.mov'
@@ -8,12 +7,17 @@ import reactIcon from '../Assets/Icons/react.png'
 import javascriptIcon from '../Assets/Icons/javascript.png'
 import bootstrapIcon from '../Assets/Icons/bootstrap.png'
 import firebaseIcon from '../Assets/Icons/firebase.png'
+import reduxIcon from '../Assets/Icons/redux.png'
+import { useDispatch } from 'react-redux'
+import { setIsDownloaded } from './Filemanager'
 import '../Styles/Projects.css'
 
 export default function Projects() {
     const [isScrolled, setIsScrolled] = useState(false)
+    const dispatch = useDispatch()
+
         
-        // When scroll to container, then headline display smoothly 
+    // When scroll to container, then headline display smoothly 
     useEffect(() => {
         const handleScroll = () => {
             const element = document.querySelector('.projects-headline')
@@ -29,6 +33,31 @@ export default function Projects() {
         }
     }, [])
 
+    // Check if data are downloaded
+    useEffect(() => {
+        let downloadedVideos = 0
+        const handleVideoLoaded = () => {
+            downloadedVideos++
+            if (downloadedVideos === 4) dispatch(setIsDownloaded())
+        }
+    
+        const videoElementOne = document.getElementById('video-one')
+        videoElementOne.addEventListener('canplay', handleVideoLoaded)
+        const videoElementTwo = document.getElementById('video-two')
+        videoElementTwo.addEventListener('canplay', handleVideoLoaded)
+        const videoElementThree = document.getElementById('video-three')
+        videoElementThree.addEventListener('canplay', handleVideoLoaded)
+        const videoElementFour = document.getElementById('video-four')
+        videoElementFour.addEventListener('canplay', handleVideoLoaded)
+    
+        return () => {
+          videoElementOne.removeEventListener('canplay', handleVideoLoaded)
+          videoElementTwo.removeEventListener('canplay', handleVideoLoaded)
+          videoElementThree.removeEventListener('canplay', handleVideoLoaded)
+          videoElementFour.removeEventListener('canplay', handleVideoLoaded)
+        }
+      }, [])
+
     return (
         <div className='projects-outer-container' id='projects'>
             <h2 className={`projects-headline ${isScrolled ? 'animate-scroll' : ''}`}>Projects</h2>
@@ -39,8 +68,7 @@ export default function Projects() {
                 <h3 className='project-headline'>Reddit</h3>
                 <h4 className='project-subline'>Social Media Clone</h4>
                 <div className='project-main'>
-                    {/* <ReactPlayer className='project-video' url={redditVideo} autoPlay loop muted /> */}
-                    <video className='project-video' autoPlay loop muted src={redditVideo}></video>
+                    <video id='video-one' className='project-video' autoPlay loop muted src={redditVideo}></video>
                     <div className='project-description'>
                         <div>
                             <h5 className='project-description-headline'>Summary</h5>
@@ -53,6 +81,7 @@ export default function Projects() {
                                 <img className='project-description-img' src={bootstrapIcon} alt="Bootstrap" />
                                 <img className='project-description-img' src={javascriptIcon} alt="Javascript" />
                                 <img className='project-description-img' src={firebaseIcon} alt="Firebase" />
+                                <img className='project-description-img' src={reduxIcon} alt="Redux" />
                             </div>
                         </div>
                         <div className='project-buttons'>
@@ -75,7 +104,7 @@ export default function Projects() {
                 <h3 className='project-headline'>ToDo List</h3>
                 <h4 className='project-subline'>Planner</h4>
                 <div className='project-main'>
-                    <video className='project-video' autoPlay loop muted src={todoVideo}></video>
+                    <video id='video-two'  className='project-video' autoPlay loop muted src={todoVideo}></video>
                     <div className='project-description'>
                         <div>
                             <h5 className='project-description-headline'>Summary</h5>
@@ -107,7 +136,7 @@ export default function Projects() {
                 <h3 className='project-headline'>Memory Card</h3>
                 <h4 className='project-subline'>Test Your Memory</h4>
                 <div className='project-main'>
-                    <video className='project-video' autoPlay loop muted src={memoryVideo}></video>
+                    <video id='video-three'  className='project-video' autoPlay loop muted src={memoryVideo}></video>
                     <div className='project-description'>
                         <div>
                             <h5 className='project-description-headline'>Summary</h5>
@@ -141,7 +170,7 @@ export default function Projects() {
                 <h3 className='project-headline'>CV Creator</h3>
                 <h4 className='project-subline'>Build your CV</h4>
                 <div className='project-main'>
-                    <video className='project-video' autoPlay loop muted src={cvPresentation}></video>
+                    <video id='video-four' className='project-video' autoPlay loop muted src={cvPresentation}></video>
                     <div className='project-description'>
                         <div>
                             <h5 className='project-description-headline'>Summary</h5>
