@@ -7,7 +7,7 @@ export default function RouteSwitch() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path={'/personal-portfolio'} exact element={<Homepage />} />
+            <Route path={'/'} exact element={<Homepage />} />
         </Routes>
     </BrowserRouter>
   )

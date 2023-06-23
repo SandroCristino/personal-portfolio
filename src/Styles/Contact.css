@@ -81,7 +81,7 @@
 }
 
 .contact-form-input:focus {
-    outline: 2px solid orange;
+    outline: none;
     box-shadow: 1px 1px 15px orange;
 }
 

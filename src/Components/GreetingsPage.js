@@ -35,7 +35,12 @@ export default function GreetingsPage() {
         <div className='greet-outer-container' id='greetings' onMouseMove={handleMouseMove}>
             <div 
             className='greet-inner-container'   
-            style={{ transform: `translate3d(${swayOffset.x}px, ${swayOffset.y}px, 0) rotateY(${swayOffset.x}deg) rotateX(${swayOffset.y}deg)`}}>
+            style={{ 
+                transform: `translate3d(${swayOffset.x}px, ${swayOffset.y}px, 0) rotateY(${swayOffset.x}deg) rotateX(${swayOffset.y}deg)`,
+                WebkitTransform: `translate3d(${swayOffset.x}px, ${swayOffset.y}px, 0) rotateY(${swayOffset.x}deg) rotateX(${swayOffset.y}deg)`,
+
+            }}
+            >
                 <p className='greet-text'>Sandro Cristino</p>
                 <p className='greet-text'>Full Stack Web Developer.</p>
             </div>
@@ -45,7 +50,10 @@ export default function GreetingsPage() {
                     key={index}
                     src={image} 
                     alt={`Planet${index + 1}`}
-                    style={{ transform: `translate3d(${roaming.x}px, ${roaming.y}px, 0) rotateY(${roaming.x}deg) rotateX(${roaming.y}deg)`}}
+                    style={{ 
+                        transform: `translate3d(${roaming.x}px, ${roaming.y}px, 0) rotateY(${roaming.x}deg) rotateX(${roaming.y}deg)`,
+                        WebkitTransform: `translate3d(${roaming.x}px, ${roaming.y}px, 0) rotateY(${roaming.x}deg) rotateX(${roaming.y}deg)`,
+                    }}
                     className={`greet-planet greet-planet-${index + 1}`}/>
                 ))}
             </div>

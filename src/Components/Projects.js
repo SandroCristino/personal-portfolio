@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ReactPlayer from 'react-player';
 import redditVideo from '../Assets/redditPresentation.mov'
 import todoVideo from '../Assets/todoPresentation.mov'
 import memoryVideo from '../Assets/memorycardPresentation.mov'
@@ -6,6 +7,7 @@ import cvPresentation from '../Assets/cvPresentation.mov'
 import reactIcon from '../Assets/Icons/react.png'
 import javascriptIcon from '../Assets/Icons/javascript.png'
 import bootstrapIcon from '../Assets/Icons/bootstrap.png'
+import firebaseIcon from '../Assets/Icons/firebase.png'
 import '../Styles/Projects.css'
 
 export default function Projects() {
@@ -37,7 +39,8 @@ export default function Projects() {
                 <h3 className='project-headline'>Reddit</h3>
                 <h4 className='project-subline'>Social Media Clone</h4>
                 <div className='project-main'>
-                        <video className='project-video' autoPlay loop muted src={redditVideo}></video>
+                    {/* <ReactPlayer className='project-video' url={redditVideo} autoPlay loop muted /> */}
+                    <video className='project-video' autoPlay loop muted src={redditVideo}></video>
                     <div className='project-description'>
                         <div>
                             <h5 className='project-description-headline'>Summary</h5>
@@ -49,6 +52,7 @@ export default function Projects() {
                                 <img className='project-description-img' src={reactIcon} alt="React" />
                                 <img className='project-description-img' src={bootstrapIcon} alt="Bootstrap" />
                                 <img className='project-description-img' src={javascriptIcon} alt="Javascript" />
+                                <img className='project-description-img' src={firebaseIcon} alt="Firebase" />
                             </div>
                         </div>
                         <div className='project-buttons'>
