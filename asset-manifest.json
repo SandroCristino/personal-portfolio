@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.887d1778.css",
-    "main.js": "/personal-portfolio/static/js/main.bc037156.js",
-    "static/media/redditPresentation.mov": "/personal-portfolio/static/media/redditPresentation.20c8a52e08d9b405ef60.mov",
-    "static/media/memorycardPresentation.mov": "/personal-portfolio/static/media/memorycardPresentation.17efe78d612a91cb84b8.mov",
-    "static/media/cvPresentation.mov": "/personal-portfolio/static/media/cvPresentation.cee6b6271e2d45857523.mov",
-    "static/media/myself.jpg": "/personal-portfolio/static/media/myself.bf88c1eaa6df6ecb21e2.jpg",
-    "static/media/todoPresentation.mov": "/personal-portfolio/static/media/todoPresentation.2625b0bf65aafc3efcdd.mov",
-    "static/media/space-background.jpg": "/personal-portfolio/static/media/space-background.37740a068bdf1d3d0e11.jpg",
-    "static/media/CV_SandroCristino.pdf": "/personal-portfolio/static/media/CV_SandroCristino.694f9bc57562e3534c73.pdf",
-    "static/media/webpack.png": "/personal-portfolio/static/media/webpack.3157bf6a256f29193ac4.png",
-    "static/media/logo.png": "/personal-portfolio/static/media/logo.df9cdba9027e6ec07b96.png",
-    "static/media/react.png": "/personal-portfolio/static/media/react.7f810bcc50eb5be9eda3.png",
-    "index.html": "/personal-portfolio/index.html",
-    "main.887d1778.css.map": "/personal-portfolio/static/css/main.887d1778.css.map",
-    "main.bc037156.js.map": "/personal-portfolio/static/js/main.bc037156.js.map"
+    "main.css": "/static/css/main.ce9f9d4e.css",
+    "main.js": "/static/js/main.573dbc2a.js",
+    "static/media/redditPresentation.mov": "/static/media/redditPresentation.20c8a52e08d9b405ef60.mov",
+    "static/media/memorycardPresentation.mov": "/static/media/memorycardPresentation.17efe78d612a91cb84b8.mov",
+    "static/media/cvPresentation.mov": "/static/media/cvPresentation.cee6b6271e2d45857523.mov",
+    "static/media/myself.jpg": "/static/media/myself.bf88c1eaa6df6ecb21e2.jpg",
+    "static/media/todoPresentation.mov": "/static/media/todoPresentation.330898a1e4e474f5b5e1.mov",
+    "static/media/space-background.jpg": "/static/media/space-background.37740a068bdf1d3d0e11.jpg",
+    "static/media/CV_SandroCristino.pdf": "/static/media/CV_SandroCristino.694f9bc57562e3534c73.pdf",
+    "static/media/webpack.png": "/static/media/webpack.3157bf6a256f29193ac4.png",
+    "static/media/logo.png": "/static/media/logo.df9cdba9027e6ec07b96.png",
+    "static/media/react.png": "/static/media/react.7f810bcc50eb5be9eda3.png",
+    "index.html": "/index.html",
+    "main.ce9f9d4e.css.map": "/static/css/main.ce9f9d4e.css.map",
+    "main.573dbc2a.js.map": "/static/js/main.573dbc2a.js.map"
   },
   "entrypoints": [
-    "static/css/main.887d1778.css",
-    "static/js/main.bc037156.js"
+    "static/css/main.ce9f9d4e.css",
+    "static/js/main.573dbc2a.js"
   ]
 }
