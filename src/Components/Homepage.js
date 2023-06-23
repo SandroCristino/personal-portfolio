@@ -7,7 +7,6 @@ import Contact from './Contact.js'
 import Footer from './Footer.js'
 import Cursor from './Cursor.js'
 
-
 export default class Homepage extends Component {
   render() {
     return (

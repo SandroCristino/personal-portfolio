@@ -5,13 +5,14 @@ import '../Styles/FrameworkSlider.css'
 export default function FrameworkSlider() {
     const [images, setImages] = useState([])
 
-    // Import frameworkst
+    // Import framework
     useEffect(() => {
         const importAll = (r) => r.keys().map(r)
         const images = importAll(require.context('../Assets/Icons', false))
         setImages(images)
     }, [])
 
+    // React slick options
     const settings = {
         infinite: true,
         slidesToShow: 4,
@@ -21,10 +22,8 @@ export default function FrameworkSlider() {
         autoplaySpeed: 2000,
         arrows: false,
         pauseOnHover: true
-      
-    };
+    }
 
- 
     return (
       <Carousel className='carousel' {...settings}>
         {images.map((framework, index) => (

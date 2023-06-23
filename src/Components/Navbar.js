@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll';
 import logo from '../Assets/logo.png'
 import pdfFile from '../Assets/CV_SandroCristino.pdf'
-
-
 import '../Styles/Navbar.css'
 
 export default function Navbar() {
@@ -13,6 +11,7 @@ export default function Navbar() {
     const [startAnimation, setStartAnimation] = useState(false)
     const navigate = useNavigate()
 
+    // Set eventlistener
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => {
@@ -20,11 +19,13 @@ export default function Navbar() {
         }
     }, [])
 
+    // Handle navbar movement
     const handleScroll = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop
         setIsScrolled(scrollTop > 0)
     }
 
+    // Handle responsive animation
     const togglerNav = () => {
         if (isNavOpen) {
             setStartAnimation(true)
@@ -37,10 +38,8 @@ export default function Navbar() {
         } 
     }
 
+    // Handle resume download
     const handleResumeDownload = () => {
-            // Replace 'resume.pdf' with the actual URL or path to your resume PDF file
-            // const resumeURL = '../Assets/CV_SandroCristino.pdf';
-  
             const link = document.createElement('a');
             link.href = pdfFile;
             link.download = 'CV_Sandro_Cristino';
@@ -85,9 +84,7 @@ export default function Navbar() {
                 </ScrollLink>
                 <button className='nav-link' onClick={handleResumeDownload}>
                     Resume
-                  
                 </button>
-             
             </div>
             <div className={`nav-toggle ${isNavOpen ? 'open' : ''}`} onClick={togglerNav}>
                 <div className={`nav-icon ${isNavOpen ? 'open' : ''}`}>

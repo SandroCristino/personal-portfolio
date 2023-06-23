@@ -1,48 +1,46 @@
 import React, { useEffect, useState} from 'react'
-import myself from '../Assets/myself.jpg'
 import FrameworkSlider from './FrameworkSlider'
+import myself from '../Assets/myself.jpg'
 import '../Styles/About.css'
-
 
 export default function About() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [scale, setScale] = useState('')
-
         
     useEffect(() => {
+
+        // When scroll to container, then headline display smoothly 
         const handleScroll = () => {
             const element = document.querySelector('.about-headline')
             const rect = element.getBoundingClientRect()
             const isVisible = rect.top < window.innerHeight && rect.bottom >= 0
             setIsScrolled(isVisible)
         }
-
-        let initialScrollPosition
-        window.addEventListener('scroll', function() {
-            initialScrollPosition = Math.floor((window.pageYOffset / 80) )
-            console.log('Scroll position:', initialScrollPosition)
-        })
      
-    const handleNextPage = () => {
-        const element = document.querySelector('.about-outer-container')
-        const rect = element.getBoundingClientRect()
-  
-        if (rect.bottom < window.innerHeight) {
-        const scrollPercentage = (window.innerHeight - rect.bottom) / window.innerHeight
-        const scaleValue = 1 - scrollPercentage * 0.1
-        setScale(scaleValue)
-        } else {
-            setScale(1)
+        // Container getting smaller if scrolling beyond about
+        const handleNextPage = () => {
+            const element = document.querySelector('.about-outer-container')
+            const rect = element.getBoundingClientRect()
+    
+            if (rect.bottom < window.innerHeight) {
+            const scrollPercentage = (window.innerHeight - rect.bottom) / window.innerHeight
+            const scaleValue = 1 - scrollPercentage * 0.1
+            setScale(scaleValue)
+            } else {
+                setScale(1)
+            }
         }
 
-    }
+        //  Add eventlistener 
         window.addEventListener('scroll', handleScroll)
         window.addEventListener('scroll', handleNextPage)
 
+        // Remove eventlistener
         return () => {
             window.removeEventListener('scroll', handleScroll)
             window.removeEventListener('scroll', handleNextPage)
         }
+        
     },[])
 
     return (

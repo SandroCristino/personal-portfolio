@@ -20,7 +20,8 @@ export default function Contact() {
     const [linkedinImg, setLinkedinImg] = useState(linkedinOff)
 
      
-    useEffect(() => {
+        // When scroll to container, then headline display smoothly 
+        useEffect(() => {
         const handleScroll = () => {
             const element = document.querySelector('.contact-headline')
             const rect = element.getBoundingClientRect()
@@ -35,6 +36,7 @@ export default function Contact() {
         }
     }, [])
 
+    // Handle change inputs
     const handleChange = (event) => {
         const inputName = event.target.name
 
@@ -59,6 +61,7 @@ export default function Contact() {
         }
     }
 
+    // Handle linking to mail application
     const handleOnSubmit = (event) => {
         event.preventDefault()
 
@@ -66,6 +69,7 @@ export default function Contact() {
         window.location.href = mailtoLink;
     }
 
+    // Handle valid and invalid style
     const handleInvalid = (event) => {
         event.preventDefault()
 
@@ -166,7 +170,6 @@ export default function Contact() {
                 </div>
             </div>
             </div>
-            
         </div>
     )
 }

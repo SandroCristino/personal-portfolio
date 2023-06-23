@@ -11,6 +11,7 @@ import '../Styles/Projects.css'
 export default function Projects() {
     const [isScrolled, setIsScrolled] = useState(false)
         
+        // When scroll to container, then headline display smoothly 
     useEffect(() => {
         const handleScroll = () => {
             const element = document.querySelector('.projects-headline')

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/GreetingsPage.css'
 
-
 export default function GreetingsPage() {
     const [swayOffset, setSwayOffset] = useState({ x: 0, y: 0 })
     const [roaming, setRoaming] = useState({ x: 0, y: 0})
@@ -14,6 +13,7 @@ export default function GreetingsPage() {
         const images = importAll(require.context('../Assets/Icons', false))
         setImages(images)
 
+        // Create circle movement
         const intervalId = setInterval(() => {
             const offsetX = Math.sin(Date.now() / 1000) * 20;
             const offsetY = Math.cos(Date.now() / 1000) * 10;
@@ -23,6 +23,7 @@ export default function GreetingsPage() {
           return () => clearInterval(intervalId);
     }, [])
 
+    // Headline movement
     const handleMouseMove = (event) => {
         const swayStrength = 80
         const offsetX = (event.clientX - window.innerWidth / 2) / swayStrength
@@ -39,16 +40,15 @@ export default function GreetingsPage() {
                 <p className='greet-text'>Full Stack Web Developer.</p>
             </div>
             <div>
-            {images.map((image, index) => (
+                {images.map((image, index) => (
                     <img 
                     key={index}
                     src={image} 
                     alt={`Planet${index + 1}`}
                     style={{ transform: `translate3d(${roaming.x}px, ${roaming.y}px, 0) rotateY(${roaming.x}deg) rotateX(${roaming.y}deg)`}}
                     className={`greet-planet greet-planet-${index + 1}`}/>
-            ))}
+                ))}
             </div>
-       
         </div>
     ) 
 }

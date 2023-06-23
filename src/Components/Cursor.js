@@ -4,7 +4,7 @@ import '../Styles/Cursor.css'
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
-
+  // Handle mouse position
   useEffect(() => {
     const handleMouseMove = (event) => {
       const { clientX: x, clientY: y } = event
@@ -18,18 +18,17 @@ const Cursor = () => {
     }
   }, [])
 
-
   return (
     <>
-    <div
-      className="cursor"
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
-    ></div>
-    <div
-      className="inner-cursor"
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
-    ></div>
-  </>
+      <div
+        className="cursor"
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      ></div>
+      <div
+        className="inner-cursor"
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      ></div>
+    </>
   )
 }
 
