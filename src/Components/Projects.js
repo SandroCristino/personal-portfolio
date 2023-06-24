@@ -38,9 +38,12 @@ export default function Projects() {
         let downloadedVideos = 0
         const handleVideoLoaded = () => {
             downloadedVideos++
-            if (downloadedVideos === 4) dispatch(setIsDownloaded())
+            console.log(downloadedVideos)
+            if (downloadedVideos === 10) {
+                dispatch(setIsDownloaded())
+            } 
         }
-    
+        
         const videoElementOne = document.getElementById('video-one')
         videoElementOne.addEventListener('canplay', handleVideoLoaded)
         const videoElementTwo = document.getElementById('video-two')
@@ -49,13 +52,7 @@ export default function Projects() {
         videoElementThree.addEventListener('canplay', handleVideoLoaded)
         const videoElementFour = document.getElementById('video-four')
         videoElementFour.addEventListener('canplay', handleVideoLoaded)
-    
-        return () => {
-          videoElementOne.removeEventListener('canplay', handleVideoLoaded)
-          videoElementTwo.removeEventListener('canplay', handleVideoLoaded)
-          videoElementThree.removeEventListener('canplay', handleVideoLoaded)
-          videoElementFour.removeEventListener('canplay', handleVideoLoaded)
-        }
+
       }, [])
 
     return (

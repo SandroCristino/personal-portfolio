@@ -6,11 +6,13 @@ import About from './About.js'
 import Contact from './Contact.js'
 import Footer from './Footer.js'
 import Cursor from './Cursor.js'
+import Loading from './Loading.js'
 
 export default class Homepage extends Component {
   render() {
     return (
       <div>
+        <Loading />
         <Navbar />
         <GreetingsPage />
         <Projects />
