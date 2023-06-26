@@ -39,7 +39,7 @@ export default function Projects() {
         const handleVideoLoaded = () => {
             downloadedVideos++
             console.log(downloadedVideos)
-            if (downloadedVideos === 5) {
+            if (downloadedVideos === 4) {
                 dispatch(setIsDownloaded())
             } 
         }

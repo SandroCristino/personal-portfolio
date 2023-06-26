@@ -7,14 +7,15 @@ video {
 .cursor,
 .inner-cursor {
     position: fixed;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: #F96167;
     border-radius: 50%;
     pointer-events: none;
     z-index: 9997;
-    transform: translate(-50%, -50%);
+    transform: translate(-30%, -30%) translateZ(999999px);
     transition: transform 0.1s ease;
+
 }
 
 .inner-cursor {
@@ -24,6 +25,8 @@ video {
     border-radius: 50%;
     z-index: 9998;
     transition: left 0.001s, top 0.001s ease;
+    transform: translateZ(999999px);
+
 }
 
 @media screen and (max-width: 1200px) {

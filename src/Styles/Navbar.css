@@ -8,7 +8,7 @@
     top: 0;
     z-index: 9999;
     transition: height 1s, background-color 0.5s ease;
-    transform: translateZ(999999px);
+    transform: translateZ(99999px);
     padding-top: 5px;
 }
 
