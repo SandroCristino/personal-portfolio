@@ -98,6 +98,12 @@ hr {
     width: 50px
 }
 
+.project-description-img:hover {
+    opacity: 0.6;
+    transition: transform 0.4s ease;
+    transform: scale(1.2);
+}
+
 .project-description-technologie {
     font-size: 2rem;
     margin: 0;

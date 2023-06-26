@@ -6,7 +6,7 @@
     position: fixed;
     min-width: 100%;
     top: 0;
-    z-index: 9999;
+    z-index: 9996;
     transition: height 1s, background-color 0.5s ease;
     transform: translateZ(99999px);
     padding-top: 5px;

@@ -55,6 +55,10 @@ export default function Projects() {
 
       }, [])
 
+    const handleOnClickIcon = (website) => {
+        window.location.href = website
+    }
+
     return (
         <div className='projects-outer-container' id='projects'>
             <h2 className={`projects-headline ${isScrolled ? 'animate-scroll' : ''}`}>Projects</h2>
@@ -74,11 +78,11 @@ export default function Projects() {
                         <div>
                             <h6 className='project-description-technologie'>Technologies</h6>
                             <div className='project-description-frameworks'>
-                                <img className='project-description-img' src={reactIcon} alt="React" />
-                                <img className='project-description-img' src={bootstrapIcon} alt="Bootstrap" />
-                                <img className='project-description-img' src={javascriptIcon} alt="Javascript" />
-                                <img className='project-description-img' src={firebaseIcon} alt="Firebase" />
-                                <img className='project-description-img' src={reduxIcon} alt="Redux" />
+                                <img className='project-description-img' src={reactIcon} onClick={() => handleOnClickIcon('https://react.dev/')} alt="React" />
+                                <img className='project-description-img' src={bootstrapIcon} onClick={() => handleOnClickIcon('https://getbootstrap.com/')} alt="Bootstrap" />
+                                <img className='project-description-img' src={javascriptIcon} onClick={() => handleOnClickIcon('https://www.javascript.com/')} alt="Javascript" />
+                                <img className='project-description-img' src={firebaseIcon} onClick={() => handleOnClickIcon('https://firebase.google.com/')} alt="Firebase" />
+                                <img className='project-description-img' src={reduxIcon} onClick={() => handleOnClickIcon('https://redux.js.org/')} alt="Redux" />
                             </div>
                         </div>
                         <div className='project-buttons'>
@@ -110,7 +114,7 @@ export default function Projects() {
                         <div>
                             <h6 className='project-description-technologie'>Technologies</h6>
                             <div className='project-description-frameworks'>
-                                <img className='project-description-img' src={javascriptIcon} alt="Javascript" />
+                                <img className='project-description-img' src={javascriptIcon} onClick={() => handleOnClickIcon('https://www.javascript.com/')} alt="Javascript" />
                             </div>
                         </div>
                         <div className='project-buttons'>
@@ -142,9 +146,9 @@ export default function Projects() {
                         <div>
                             <h6 className='project-description-technologie'>Technologies</h6>
                             <div className='project-description-frameworks'>
-                                <img className='project-description-img' src={reactIcon} alt="React" />
-                                <img className='project-description-img' src={bootstrapIcon} alt="Bootstrap" />
-                                <img className='project-description-img' src={javascriptIcon} alt="Javascript" />
+                                <img className='project-description-img' src={reactIcon} onClick={() => handleOnClickIcon('https://react.dev/')} alt="React" />
+                                <img className='project-description-img' src={bootstrapIcon} onClick={() => handleOnClickIcon('https://getbootstrap.com/')} alt="Bootstrap" />
+                                <img className='project-description-img' src={javascriptIcon} onClick={() => handleOnClickIcon('https://www.javascript.com/')} alt="Javascript" />
                             </div>
                         </div>
                         <div className='project-buttons'>
@@ -176,9 +180,9 @@ export default function Projects() {
                         <div>
                             <h6 className='project-description-technologie'>Technologies</h6>
                             <div className='project-description-frameworks'>
-                                <img className='project-description-img' src={reactIcon} alt="React" />
-                                <img className='project-description-img' src={bootstrapIcon} alt="Bootstrap" />
-                                <img className='project-description-img' src={javascriptIcon} alt="Javascript" />
+                                <img className='project-description-img' src={reactIcon} onClick={() => handleOnClickIcon('https://react.dev/')} alt="React" />
+                                <img className='project-description-img' src={bootstrapIcon} onClick={() => handleOnClickIcon('https://getbootstrap.com/')} alt="Bootstrap" />
+                                <img className='project-description-img' src={javascriptIcon} onClick={() => handleOnClickIcon('https://www.javascript.com/')} alt="Javascript" />
                             </div>
                         </div>
                         <div className='project-buttons'>
